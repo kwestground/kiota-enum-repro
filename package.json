@@ -1,0 +1,17 @@
+{
+  "name": "kiota-enum-repro",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "generate": "kiota generate -d openapi.json -l TypeScript -c ApiClient -n Api -o ./src/client --clean-output --exclude-backward-compatible",
+    "generate-fixed": "U:/Source/Repos/kiota/src/kiota/bin/Release/net10.0/kiota.exe generate -d openapi.json -l TypeScript -c ApiClient -n Api -o ./src/client --clean-output --exclude-backward-compatible",
+    "build": "tsc --noEmit",
+    "test": "npm run generate && npm run build"
+  },
+  "devDependencies": {
+    "@microsoft/kiota-abstractions": "^1.0.0-preview.86",
+    "@microsoft/kiota-http-fetchlibrary": "^1.0.0-preview.80",
+    "@microsoft/kiota-serialization-json": "^1.0.0-preview.86",
+    "typescript": "^5.7.0"
+  }
+}
