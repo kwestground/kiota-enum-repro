@@ -6,6 +6,15 @@ Minimal reproduction for [microsoft/kiota#7332](https://github.com/microsoft/kio
 
 Kiota generates TypeScript enum type aliases but imports them as **values** instead of **types**, causing TS1484 errors when `verbatimModuleSyntax` is enabled.
 
+In runtime environments like Vite, this causes a `SyntaxError`:
+
+```
+SyntaxError: The requested module '/src/client/models/index.ts'
+does not provide an export named 'ItemStatus'
+```
+
+> **Note:** Kiota generates `// @ts-ignore` above imports, which hides the TypeScript error. This repro strips those comments to expose the underlying issue at compile time.
+
 ### Generated code in `models/index.ts`
 
 ```typescript
