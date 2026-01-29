@@ -21,6 +21,13 @@ export const ItemStatusObject = { Draft: "Draft", Active: "Active" } as const;
 import { ItemStatus, type Item } from "../models/index.js";
 ```
 
+With [`verbatimModuleSyntax`](https://www.typescriptlang.org/tsconfig/#verbatimModuleSyntax) enabled, TypeScript requires type-only imports to use the `type` keyword:
+
+```typescript
+// ✅ CORRECT
+import { type ItemStatus, type Item } from "../models/index.js";
+```
+
 ### TypeScript error
 
 ```console
