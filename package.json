@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
+    "dev": "vite",
     "generate": "kiota generate -d openapi.json -l TypeScript -c ApiClient -n Api -o ./src/client --clean-output --exclude-backward-compatible && npm run strip-ts-ignore",
     "generate-fixed": "U:/Source/Repos/kiota/src/kiota/bin/Release/net10.0/kiota.exe generate -d openapi.json -l TypeScript -c ApiClient -n Api -o ./src/client --clean-output --exclude-backward-compatible && npm run strip-ts-ignore",
     "strip-ts-ignore": "powershell -ExecutionPolicy Bypass -File ./scripts/strip-ts-ignore.ps1",

@@ -47,10 +47,20 @@ src/client/items/index.ts:4:44 - error TS1484: 'ItemStatus' is a type and must b
 
 ## Reproduce
 
+### Option 1: TypeScript compile-time error
+
 ```bash
 npm install
 npm run generate   # Generate with official Kiota (strips @ts-ignore)
 npm run build      # TypeScript check → see TS1484 error
+```
+
+### Option 2: Vite runtime error
+
+```bash
+npm install
+npm run generate   # Generate with official Kiota
+npm run dev        # Start Vite → open browser → see SyntaxError in console
 ```
 
 ## Test the Fix
@@ -58,10 +68,12 @@ npm run build      # TypeScript check → see TS1484 error
 ```bash
 npm run generate-fixed   # Generate with fixed Kiota (PR #7332)
 npm run build            # TypeScript check → works!
+npm run dev              # Vite → works!
 ```
 
 ## Files
 
 - `openapi.json` - Minimal OpenAPI spec with one enum
 - `tsconfig.json` - TypeScript config with `verbatimModuleSyntax: true`
+- `index.html` - HTML page for Vite dev server
 - `scripts/strip-ts-ignore.ps1` - Removes `@ts-ignore` from generated code to expose the error

@@ -2,7 +2,7 @@
   "descriptionHash": "AE02B654AFFE607D6E364ED507030EF68E9E34607C45E734C7C031A94AD013AA72E99040D4384A085E1AAEC84B1B40786DC7528E45B9E7383CBE22CE773F035E",
   "descriptionLocation": "../../openapi.json",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.31.0",
+  "kiotaVersion": "1.30.0",
   "clientClassName": "ApiClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "Api",
